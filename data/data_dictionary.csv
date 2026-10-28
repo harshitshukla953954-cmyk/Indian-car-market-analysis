@@ -1,0 +1,32 @@
+﻿Column Name,Data Type,Description,Values / Range,Business Relevance
+Transaction_ID,Text,Unique identifier for each purchase record,TXN01001 – TXN02500,Primary key
+Year,Integer,Year of vehicle purchase,2019–2024,Time-series trend analysis
+Quarter,Text,Quarter of purchase,"Q1, Q2, Q3, Q4",Seasonality analysis
+State,Text,Indian state of the buyer,10 major states,Geographic segmentation
+City,Text,City of purchase,30 cities,Micro-market analysis
+City_Tier,Text,Classification of city,"Tier-1, Tier-2, Tier-3",Urban vs semi-urban preference
+Customer_Age_Group,Text,Age bracket of buyer,"18-25, 26-35, 36-45, 46-55, 55+",Demographic segmentation
+Gender,Text,Gender of buyer,"Male, Female",Gender-based preference
+Occupation,Text,Occupation category,"Salaried, Business Owner, Self-Employed, Government Employee, Student",Socio-economic profiling
+Annual_Income_INR,Integer,Annual household income in INR,"3,00,000 – 35,00,000",Affordability & segment fit
+Family_Size,Integer,Number of family members,1–6,Space requirement driver
+Car_Segment,Text,Vehicle body type (KEY FIELD),"SUV, Sedan, Hatchback, MUV/MPV, Luxury",Core analysis variable
+Brand,Text,Manufacturer brand,"Maruti Suzuki, Hyundai, Tata, Mahindra, Kia, etc.",Brand loyalty analysis
+Car_Model,Text,Specific car model,"Creta, Nexon, Swift, etc.",Model-level popularity
+Fuel_Type,Text,Fuel technology,"Petrol, Diesel, CNG, Electric, Petrol Hybrid",Powertrain preference
+Transmission,Text,Gearbox type,"Manual, Automatic",Feature preference
+Ex_Showroom_Price_INR,Integer,Ex-showroom price in INR,"4,00,000 – 1,20,00,000",Price-segment mapping
+Purchase_Type,Text,Mode of payment,"Cash, Finance",Financial behaviour
+Loan_Tenure_Months,Integer,Loan duration (0 = cash purchase),"0, 24, 36, 48, 60, 72, 84",Financing behaviour
+Primary_Buying_Reason,Text,Main driver for purchase decision,"Road Presence, Family Space, Fuel Efficiency, etc.",Consumer motivation
+Safety_Importance,Integer,"Rating: importance of safety (1=Low, 5=High)",1–5,Feature priority matrix
+Mileage_Importance,Integer,Rating: importance of fuel economy,1–5,Feature priority matrix
+Design_Importance,Integer,Rating: importance of vehicle design,1–5,Feature priority matrix
+Tech_Features_Importance,Integer,Rating: importance of tech/infotainment,1–5,Feature priority matrix
+After_Sales_Importance,Integer,Rating: importance of after-sales service,1–5,Feature priority matrix
+Primary_Info_Source,Text,How buyer researched the car,"YouTube Reviews, CarDekho/CarWale, Dealer Visit, etc.",Marketing channel insight
+Test_Drive_Taken,Text,Whether buyer took a test drive,"Yes, No",Purchase journey analysis
+Overall_Satisfaction,Integer,"Satisfaction with purchase (1=Very Dissatisfied, 5=Very Satisfied)",1–5,CSAT metric
+Would_Recommend,Text,Net Promoter intent,"Yes, No",NPS proxy
+Repeat_Buyer,Text,Whether this is a repeat car buyer,"Yes, No",Customer loyalty
+Previous_Segment,Text,Previous car segment (if repeat buyer),"SUV, Sedan, Hatchback, Same, N/A",Segment migration tracking

@@ -1,0 +1,49 @@
+// Power BI DAX starter measures
+// Assumes the imported fact table is named CarData.
+// Validate table/column names and results in your model.
+
+Total Transactions = COUNTROWS(CarData)
+
+SUV Transactions =
+CALCULATE([Total Transactions], CarData[Car_Segment] = "SUV")
+
+SUV Share % =
+DIVIDE([SUV Transactions], [Total Transactions])
+
+Sedan Transactions =
+CALCULATE([Total Transactions], CarData[Car_Segment] = "Sedan")
+
+Sedan Share % =
+DIVIDE([Sedan Transactions], [Total Transactions])
+
+Average Ex-Showroom Price (INR) =
+AVERAGE(CarData[Ex_Showroom_Price_INR])
+
+Average Satisfaction Score =
+AVERAGE(CarData[Overall_Satisfaction])
+
+Finance Buyer % =
+DIVIDE(
+    CALCULATE([Total Transactions], CarData[Purchase_Type] = "Finance"),
+    [Total Transactions]
+)
+
+Test Drive Adoption % =
+DIVIDE(
+    CALCULATE([Total Transactions], CarData[Test_Drive_Taken] = "Yes"),
+    [Total Transactions]
+)
+
+Recommendation Intent % =
+DIVIDE(
+    CALCULATE([Total Transactions], CarData[Would_Recommend] = "Yes"),
+    [Total Transactions]
+)
+
+// For segment share trend, use Car_Segment as legend and Year on the axis.
+// Share will respect the current filter context when the segment is in the visual.
+Segment Share % =
+DIVIDE(
+    [Total Transactions],
+    CALCULATE([Total Transactions], REMOVEFILTERS(CarData[Car_Segment]))
+)
